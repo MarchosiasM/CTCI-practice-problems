@@ -3,14 +3,18 @@
   "version": "0.0.1",
   "description": "Cracking the Coding Interview - Answers in Javascript",
   "scripts": {
-    "test": "eslint ."
+    "test": "eslint .",
+    "test2": "jest"
   },
   "dependencies": {
-    "expect": "^23.5.0",
-    "immutable": "^3.8.2"
+    "immutable": "^3.8.2",
+    "jest": "^23.5.0"
   },
   "devDependencies": {
-    "eslint": "^3.14.1"
+    "awesome-typescript-loader": "^5.2.0",
+    "eslint": "^3.14.1",
+    "source-map-loader": "^0.2.4",
+    "typescript": "^3.0.3"
   },
   "license": "MIT"
 }
