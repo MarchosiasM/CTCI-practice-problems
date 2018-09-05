@@ -1,4 +1,4 @@
-var allUniqueChars = function(string) {
+var isUnique = function(string) {
   
   // O(n^2) approach, no additional data structures used
   // for each character, check remaining characters for duplicates
@@ -14,3 +14,8 @@ var allUniqueChars = function(string) {
 
 /* TESTS */
 // log some tests here
+
+console.log(isUnique('Hello') + ' should be false');
+console.log(isUnique('Stuff') + ' should be false');
+console.log(isUnique('abcdef') + ' should be true');
+console.log(isUnique('Abadefigj') + ' should be false?');

@@ -1,57 +1,83 @@
-var Queue = require('./Queue');
+const Queue = require('./Queue');
 
-var BST = function(value) {
-  this.value = value;
-  this.left = null;
-  this.right = null;
-};
-
-BST.prototype.insert = function(value) {
-  if (value < this.value) {
-    if (this.left === null) {
-      this.left = new BST(value);
-    } else {
-      this.left.insert(value);      
+class BSTNode {
+  constructor(value) {
+    this.value = value;
+    this.right = null;
+    this.left = null;
+  }
+  insert(value) {
+    if (value === null) {
+      return;
     }
-  } else {
-    if (this.right === null) {
-      this.right = new BST(value);
+    // console.log(value instanceof BSTNode);
+    if (value instanceof BSTNode) {
+      if (this.value === undefined) {
+        this.value = value.value;
+        return;
+      } else if (value.value < this.value) {
+        if (this.left === null) {
+          this.left = value;
+        } else {
+          this.left.insert(value);
+        }
+      } else if (value.value > this.value) {
+        if (this.right === null) {
+          this.right = value;
+        } else {
+          this.right.insert(value);
+        }
+      }
     } else {
-      this.right.insert(value);
+      if (this.value === undefined) {
+        this.value = value;
+      } else if (value < this.value) {
+        if (this.left === null) {
+          this.left = new BSTNode(value);
+        } else {
+          this.left.insert(value);
+        }
+      } else if (value > this.value) {
+        if (this.right === null) {
+          this.right = new BSTNode(value);
+        } else {
+          this.right.insert(value);
+        }
+      }
     }
   }
-};
-
-BST.prototype.printLevelOrder = function() {
-  var level = [];
-  var q = new Queue();
-  var nextq = new Queue();
-  var currNode;
-
-  q.add(this);
-  while (!q.isEmpty()) {
-    currNode = q.remove();
-    level.push(currNode.value);
-    if (currNode.left !== null) {
-      nextq.add(currNode.left);
-    }
-    if (currNode.right !== null) {
-      nextq.add(currNode.right);
-    }
-    if (q.isEmpty()) {
-      console.log(level.join(','));
-      level = [];
-      q = nextq;
-      nextq = new Queue();
+  printTreeStruct() {
+    let currQ = new Queue();
+    let nextQ = new Queue();
+    let currNode = this;
+    currQ.add(currNode);
+    let thisLevel = [];
+    while (!currQ.isEmpty()) {
+      currNode = currQ.remove();
+      thisLevel.push(currNode.value);
+      if (currNode.left !== null) {
+        nextQ.add(currNode.left);
+      }
+      if (currNode.right !== null) {
+        nextQ.add(currNode.right);
+      }
+      if (currQ.isEmpty()) {
+        const printString = thisLevel.join(', ');
+        console.log(printString);
+        thisLevel = [];
+        currQ = nextQ;
+        nextQ = new Queue();
+      }
     }
   }
-};
+}
 
-module.exports = BST;
+
+module.exports = BSTNode;
 
 /* TEST */
 // 1, 2, 3, 4, 5, 6, 7
-// var bst = new BST();
+// var bst = new BSTNode();
 // bst.insert(4);
 // bst.insert(2);
 // bst.insert(6);
@@ -60,4 +86,4 @@ module.exports = BST;
 // bst.insert(5);
 // bst.insert(7);
 
-// bst.printLevelOrder();
+// bst.printTreeStruct();

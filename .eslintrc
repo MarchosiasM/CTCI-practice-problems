@@ -20,5 +20,8 @@
   },
   "globals": {
     "chrome": false
+  },
+  "parserOptions": {
+    "ecmaVersion": 6
   }
 }

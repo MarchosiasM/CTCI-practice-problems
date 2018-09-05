@@ -5,9 +5,12 @@
   "scripts": {
     "test": "eslint ."
   },
-  "dependencies": {},
+  "dependencies": {
+    "expect": "^23.5.0",
+    "immutable": "^3.8.2"
+  },
   "devDependencies": {
-    "eslint": "^3.14.1"    
+    "eslint": "^3.14.1"
   },
   "license": "MIT"
 }
