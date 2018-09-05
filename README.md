@@ -1,7 +1,7 @@
 This is my own pull of another public CTCI Javascript repo, that contains all my attempts to solve the problems there-in, including Jest for testing (and practice writing tests)
 
 
-Original repo fond here: https://github.com/careercup/CtCI-6th-Edition-JavaScript
+Original repo found here: https://github.com/careercup/CtCI-6th-Edition-JavaScript
 
 # Cracking the Coding Interview 6th Edition - JavaScript
 
