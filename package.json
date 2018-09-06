@@ -3,16 +3,19 @@
   "version": "0.0.1",
   "description": "Cracking the Coding Interview - Answers in Javascript",
   "scripts": {
-    "test": "eslint .",
-    "test2": "jest"
+    "test": "jest --watchAll --verbose"
   },
   "dependencies": {
     "immutable": "^3.8.2",
     "jest": "^23.5.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.0.0",
     "awesome-typescript-loader": "^5.2.0",
+    "babel-core": "^7.0.0-0",
+    "babel-jest": "^23.4.2",
     "eslint": "^3.14.1",
+    "regenerator-runtime": "^0.12.1",
     "source-map-loader": "^0.2.4",
     "typescript": "^3.0.3"
   },

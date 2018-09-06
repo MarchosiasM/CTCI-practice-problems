@@ -1,70 +1,103 @@
 const Queue = require('./Queue');
 
-class BSTNode {
-  constructor(value) {
-    this.value = value;
+class BST {
+  constructor(n) {
+    this.value = n;
     this.right = null;
     this.left = null;
   }
-  insert(value) {
-    if (value === null) {
-      return;
-    }
-    // console.log(value instanceof BSTNode);
-    if (value instanceof BSTNode) {
-      if (this.value === undefined) {
-        this.value = value.value;
-        return;
-      } else if (value.value < this.value) {
-        if (this.left === null) {
-          this.left = value;
-        } else {
-          this.left.insert(value);
-        }
-      } else if (value.value > this.value) {
-        if (this.right === null) {
-          this.right = value;
-        } else {
-          this.right.insert(value);
-        }
-      }
+
+  insert(input) {
+    if (typeof input !== 'number') {
+      return null;
     } else {
       if (this.value === undefined) {
-        this.value = value;
-      } else if (value < this.value) {
-        if (this.left === null) {
-          this.left = new BSTNode(value);
+        this.value = input;
+      } else {
+        if (input <= this.value) {
+          if (this.left === null) {
+            this.left = new BST(input);
+          } else {
+            this.left.insert(input);
+          }
         } else {
-          this.left.insert(value);
-        }
-      } else if (value > this.value) {
-        if (this.right === null) {
-          this.right = new BSTNode(value);
-        } else {
-          this.right.insert(value);
+          if (this.right === null) {
+            this.right = new BST(input);
+          } else {
+            this.right.insert(input);
+          }
         }
       }
     }
   }
-  printTreeStruct() {
+
+  find(searchValue) {
+    if (searchValue === this.value) {
+      return this;
+    }
+    if (searchValue < this.value) {
+      if (this.left === null) {
+        return null;
+      } else {
+        return this.left.find(searchValue);
+      }
+    }
+    if (searchValue > this.value) {
+      if (this.right === null) {
+        return null;
+      } else {
+        return this.right.find(searchValue);
+      }
+    }
+  }
+
+  bundle(...args) {
+    let array = ['['];
+    args.forEach((entry) => {
+      array.push(entry);
+    });
+    array.push(']');
+    return array;
+  }
+
+  gatherLevel(...args) {
+    let array = [];
+    args.forEach((entry) => {
+      entry.forEach((nestedEntry) => {
+        array = array.concat(nestedEntry);
+      });
+    });
+    return array;
+  }
+
+  print() {
     let currQ = new Queue();
     let nextQ = new Queue();
-    let currNode = this;
-    currQ.add(currNode);
-    let thisLevel = [];
+    currQ.add(this);
+    let currNode;
+    let printArray = [];
+    printArray = printArray.concat(this.bundle(this.value));
+    console.log(printArray.join(''));
+    let childCollection = [];
+    let bundleCollection = [];
     while (!currQ.isEmpty()) {
       currNode = currQ.remove();
-      thisLevel.push(currNode.value);
-      if (currNode.left !== null) {
-        nextQ.add(currNode.left);
+      for (let child in currNode) {
+        if (child === null) {
+
+        } else {
+          childCollection.push(child);
+          printArray.push(child.value);
+          nextQ.add(child);
+        }
       }
-      if (currNode.right !== null) {
-        nextQ.add(currNode.right);
-      }
+      bundleCollection.push(this.bundle(childCollection));
+      childCollection = [];
+
       if (currQ.isEmpty()) {
-        const printString = thisLevel.join(', ');
-        console.log(printString);
-        thisLevel = [];
+        printArray = this.gatherLevel(...bundleCollection);
+        console.log(printArray.join(''));
+        printArray = [];
         currQ = nextQ;
         nextQ = new Queue();
       }
@@ -72,18 +105,4 @@ class BSTNode {
   }
 }
 
-
-module.exports = BSTNode;
-
-/* TEST */
-// 1, 2, 3, 4, 5, 6, 7
-// var bst = new BSTNode();
-// bst.insert(4);
-// bst.insert(2);
-// bst.insert(6);
-// bst.insert(1);
-// bst.insert(3);
-// bst.insert(5);
-// bst.insert(7);
-
-// bst.printTreeStruct();
+module.exports = BST;

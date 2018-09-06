@@ -29,3 +29,5 @@ tree1.printTreeStruct();
 var arr2 = [1, 2, 3, 4, 5, 6, 7];
 var tree2 = insertBalanced(arr2);
 tree2.printTreeStruct();
+
+module.exports = insertBalanced;
