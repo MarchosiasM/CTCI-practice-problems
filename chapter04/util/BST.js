@@ -75,31 +75,21 @@ class BST {
     let nextQ = new Queue();
     currQ.add(this);
     let currNode;
-    let printArray = [];
-    printArray = printArray.concat(this.bundle(this.value));
-    console.log(printArray.join(''));
-    let childCollection = [];
-    let bundleCollection = [];
+    let level = [];
     while (!currQ.isEmpty()) {
       currNode = currQ.remove();
       for (let child in currNode) {
-        if (child === null) {
-
-        } else {
-          childCollection.push(child);
-          printArray.push(child.value);
+        if (child !== null) {
           nextQ.add(child);
         }
       }
-      bundleCollection.push(this.bundle(childCollection));
-      childCollection = [];
-
+      level.push(this.bundle(currNode.left, currNode.right));
       if (currQ.isEmpty()) {
-        printArray = this.gatherLevel(...bundleCollection);
-        console.log(printArray.join(''));
-        printArray = [];
-        currQ = nextQ;
-        nextQ = new Queue();
+        if (!nextQ.isEmpty()) {
+          currQ = nextQ;
+          nextQ = new Queue();
+        }
+        level = [];
       }
     }
   }

@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Cracking the Coding Interview - Answers in Javascript",
   "scripts": {
-    "test": "jest --watchAll --verbose"
+    "test": "jest --watch --verbose"
   },
   "dependencies": {
     "immutable": "^3.8.2",

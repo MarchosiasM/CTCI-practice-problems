@@ -1,4 +1,4 @@
-const sortedMerge = require('./sortedMerge.prac.1.js');
+const sortedMerge = require('./sortedMerge.prac.3.js');
 
 /* TEST */
 
@@ -21,7 +21,7 @@ test('works with inputs reversed', () => {
 });
 
 test('throws error with bad inputs', () => {
-  expect(sortedMerge()).toEqual(errorText);
+  expect(() => { sortedMerge(); }).toThrow();
 });
 
 test('returns appropriate array if it requires more complex work on sorted arrays', () => {
