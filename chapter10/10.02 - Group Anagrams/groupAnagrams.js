@@ -1,6 +1,6 @@
 const groupAnagrams = (strArr) => {
   if (strArr === undefined) {
-   return 'where is your anagram?';
+    return 'where is your anagram?';
   } else {
     let mapStrArr = strArr.map((string) => {
       return {
@@ -10,6 +10,9 @@ const groupAnagrams = (strArr) => {
     });
 
     mapStrArr.sort((a, b) => {
+      console.log(a.sorted);
+      console.log(b.sorted);
+      console.log(a.sorted < b.sorted);
       return a.sorted < b.sorted ? 1 : -1;
     });
 
@@ -24,13 +27,13 @@ const groupAnagrams = (strArr) => {
 /* TEST */
 
 const anagrams = [
-  'motherinlaw', 
-  'debit card', 
-  'dormitory', 
-  'theearthquakes', 
-  'astronomer', 
-  'punishments', 
-  'schoolmaster', 
+  'motherinlaw',
+  'debit card',
+  'dormitory',
+  'theearthquakes',
+  'astronomer',
+  'punishments',
+  'schoolmaster',
   'hitlerwoman',
   'badcredit',
   'dirtyroom',
