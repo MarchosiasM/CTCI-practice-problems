@@ -1,4 +1,4 @@
-const urlify = require('./urlify.prac.2');
+const urlify = require('./urlify.prac.3');
 
 // Tests
 describe('Chapter 1, Problem 3, urlify', () => {
