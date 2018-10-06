@@ -1,4 +1,4 @@
-const StackMin = require('./stackMin.prac.4.js');
+const StackMin = require('./stackMin.prac.5.js');
 let s = new StackMin();
 describe('CH 3.2 - StackMin', () => {
   it('correctly accepts elements into the stack and returns the correct minimum', () => {
