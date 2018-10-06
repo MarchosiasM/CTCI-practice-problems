@@ -1,4 +1,4 @@
-const sortedMerge = require('./sortedMerge.prac.3.js');
+const sortedMerge = require('./sortedMerge.prac.4.js');
 
 /* TEST */
 
