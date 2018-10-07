@@ -1,5 +1,6 @@
 var BST = require('../util/BST');
-const listOfDepths = require('./listOfDepths.prac.1.js');
+const listOfDepths = require('./listOfDepths.prac.2.js');
+const LinkedList = require('../util/LinkedList');
 
 // var listOfDepths = function (bst) {
 //   var listOfLists = [];
@@ -40,7 +41,20 @@ describe('Chapter 4, problem 3: List of depths', () => {
   tree.insert(3);
   tree.insert(5);
   tree.insert(7);
+  // console.log(tree);
+  console.log(listOfDepths(tree));
   it('returns 3 linked lists if the depth of the tree is 3', () => {
     expect(listOfDepths(tree).length).toBe(3);
   });
+  it('has a zeroth entry equal to the head of the tree', () => {
+    const node = new LinkedList(4);
+    expect(node).toEqual(listOfDepths(tree)[0]);
+  });
+  it('returns an array', () => {
+    expect(listOfDepths(tree) instanceof Array).toEqual(true);
+  });
+  it('consists of elements that are LinkedLists', () => {
+    expect(listOfDepths(tree)[0] instanceof LinkedList).toEqual(true);
+  });
+
 });
