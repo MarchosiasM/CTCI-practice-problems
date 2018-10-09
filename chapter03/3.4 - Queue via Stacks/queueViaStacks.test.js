@@ -1,4 +1,4 @@
-const myQueue = require('./queueViaStacks.prac.1');
+const myQueue = require('./queueViaStacks.prac.2');
 
 // var Stack = require('../util/Stack');
 
@@ -38,9 +38,9 @@ const myQueue = require('./queueViaStacks.prac.1');
 //   return this.front.peek();
 // };
 
-myQueue.prototype.isEmpty = function () {
-  return this.front.isEmpty() && this.back.isEmpty();
-};
+// myQueue.prototype.isEmpty = function () {
+//   return this.front.isEmpty() && this.back.isEmpty();
+// };
 var m = new myQueue();
 
 
