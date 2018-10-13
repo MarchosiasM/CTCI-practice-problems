@@ -1,5 +1,5 @@
 var BST = require('../util/BST');
-const listOfDepths = require('./listOfDepths.prac.2.js');
+const listOfDepths = require('./listOfDepths.prac.3.js');
 const LinkedList = require('../util/LinkedList');
 
 // var listOfDepths = function (bst) {
