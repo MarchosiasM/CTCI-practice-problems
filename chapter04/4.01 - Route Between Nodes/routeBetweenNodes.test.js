@@ -1,6 +1,6 @@
 const Graph = require('../util/Graph');
-const checkRoute = require('./routeBetweenNodes.prac.4');
-const Queue = require('../util/Queue');
+const checkRoute = require('./routeBetweenNodes.prac.5');
+// const Queue = require('../util/Queue');
 /* TEST */
 const graph = new Graph();
 graph.addNode('A');
@@ -26,7 +26,7 @@ describe('checkRoute', () => {
     expect(checkRoute('A', 'C', graph)).toBe(true);
     expect(checkRoute('A', 'E', graph)).toBe(false);
     expect(checkRoute('A', 'B', graph)).toBe(true);
-    expect(checkRoute('B', 'A', graph)).toBe(false);
+    expect(checkRoute('B', 'A', graph)).toBe(true);
     expect(checkRoute('D', 'E', graph)).toBe(true);
   });
 });

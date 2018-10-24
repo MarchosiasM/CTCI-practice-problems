@@ -30,7 +30,7 @@ const checkRoute = (nodeA, nodeB, graph) => {
       }
       for (let edge in graph.findEdges(currNode)) {
         if (!visitedBuffer[edge]) {
-          qA.add(edge);
+          qB.add(edge);
           visitedBuffer[edge] = true;
         }
       }
