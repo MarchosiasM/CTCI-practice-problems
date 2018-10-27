@@ -1,4 +1,4 @@
-const findKthToLast = require('./returnKthToLast.prac.6');
+const findKthToLast = require('./returnKthToLast.prac.7');
 const linkedList = require('../util/LinkedList');
 
 
@@ -27,7 +27,7 @@ describe('Chapter 2: Problem 2, find Kth to Last', () => {
     expect(findKthToLast(-1, a).payload).toBeNull();
   });
   it('Returns the last element when the argument is 1', () => {
-    findKthToLast(1, a);
+    expect(findKthToLast(1, a).payload).toEqual('7');
   });
 
 });
