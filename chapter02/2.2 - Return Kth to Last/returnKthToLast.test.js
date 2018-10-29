@@ -1,24 +1,24 @@
-const findKthToLast = require('./returnKthToLast.prac.7');
+const findKthToLast = require('./returnKthToLast.prac.8');
 const linkedList = require('../util/LinkedList');
 
 
-/* TESTS */
-var a = new linkedList('1');
-var b = new linkedList('2');
-var c = new linkedList('3');
-var d = new linkedList('4');
-var e = new linkedList('5');
-var f = new linkedList('6');
-var g = new linkedList('7');
 
-a.next = b;
-b.next = c;
-c.next = d;
-d.next = e;
-e.next = f;
-f.next = g;
 
 describe('Chapter 2: Problem 2, find Kth to Last', () => {
+  var a = new linkedList('1');
+  var b = new linkedList('2');
+  var c = new linkedList('3');
+  var d = new linkedList('4');
+  var e = new linkedList('5');
+  var f = new linkedList('6');
+  var g = new linkedList('7');
+
+  a.next = b;
+  b.next = c;
+  c.next = d;
+  d.next = e;
+  e.next = f;
+  f.next = g;
   it('With 1 as the last element, returns the 3rd to last when you input 3 as an argument', () => {
     expect(findKthToLast(3, a).payload).toEqual('5');
   });
