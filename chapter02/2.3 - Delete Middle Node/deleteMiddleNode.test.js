@@ -1,4 +1,4 @@
-const deleteMiddleNode = require('./deleteMiddleNode.prac.3');
+const deleteMiddleNode = require('./deleteMiddleNode.prac.4');
 
 var LinkedList = function (value) {
   this.value = value;
