@@ -1,4 +1,4 @@
-const findMagic = require('./findMagic.prac.2');
+const findMagic = require('./findMagic.prac.3');
 
 // var findMagic = function (array, start, end) {
 //   if (start === undefined) {
