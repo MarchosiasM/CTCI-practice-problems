@@ -17,5 +17,5 @@ describe('Chapter 8, Problem 1', () => {
 
   it('returns 7 when you put in 4 as an argument', () => {
     expect(numWays(4)).toEqual(7);
-  })
+  });
 });
