@@ -1,4 +1,4 @@
-const numWays = require('./tripleStep.prac.7');
+const numWays = require('./numWays.prac.7');
 
 /* TEST */
 

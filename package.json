@@ -6,6 +6,7 @@
     "test": "jest --watch --verbose"
   },
   "dependencies": {
+    "@types/node": "^10.12.9",
     "immutable": "^3.8.2",
     "jest": "^23.5.0"
   },
