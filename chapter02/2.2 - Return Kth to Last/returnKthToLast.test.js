@@ -1,4 +1,4 @@
-const findKthToLast = require('./returnKthToLast.prac.9');
+const findKthToLast = require('./returnKthToLast.prac.10');
 const linkedList = require('../util/LinkedList');
 
 
