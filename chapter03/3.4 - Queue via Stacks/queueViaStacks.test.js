@@ -1,4 +1,4 @@
-const myQueue = require('./queueViaStacks.prac.2');
+const myQueue = require('./queueViaStacks.prac.3');
 
 // var Stack = require('../util/Stack');
 
