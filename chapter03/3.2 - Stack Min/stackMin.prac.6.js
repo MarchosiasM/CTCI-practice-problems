@@ -1,4 +1,4 @@
-const Stack = require('../util/Stack')
+const Stack = require('../util/Stack');
 
 class StackMin {
     constructor() {
