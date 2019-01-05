@@ -1,4 +1,4 @@
-const groupAnagrams = require('./groupAnagrams.prac.5');
+const groupAnagrams = require('./groupAnagrams.prac.6');
 
 let anagrams;
 let anagramsSorted;
