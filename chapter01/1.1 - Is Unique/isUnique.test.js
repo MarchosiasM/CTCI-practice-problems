@@ -1,7 +1,6 @@
-const isUnique = require('./isUnique.prac.3');
+const isUnique = require('./isUnique.prac.4');
 
 describe('Chapter 1, Problem 1', () => {
-  console.log(isUnique('Hello') + ' should be false');
   it('returns false when "hello" is an input', () => {
     expect(isUnique('Hello')).toBeFalsy();
   });
