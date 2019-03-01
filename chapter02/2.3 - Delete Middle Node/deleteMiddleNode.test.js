@@ -1,4 +1,4 @@
-const deleteMiddleNode = require('./deleteMiddleNode.prac.4');
+const deleteMiddleNode = require('./deleteMiddleNode.prac.5');
 
 var LinkedList = function (value) {
   this.value = value;
@@ -36,7 +36,7 @@ ee.next = fe;
 describe('Chapter 2, Problem 3, Delete Middle Node', () => {
   it('will change the value of the input node to the next nodes value', () => {
     expect(f.value).toEqual('f');
-  })
+  });
   it('accepts the middle of a linked list, and removes the node\'s value', () => {
     expect(a).toEqual(ae);
     deleteMiddleNode(c);

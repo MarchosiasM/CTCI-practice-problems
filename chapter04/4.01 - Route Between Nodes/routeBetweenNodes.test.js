@@ -1,5 +1,5 @@
 const Graph = require('../util/Graph');
-const checkRoute = require('./routeBetweenNodes.prac.5');
+const checkRoute = require('./routeBetweenNodes.prac.6');
 // const Queue = require('../util/Queue');
 /* TEST */
 const graph = new Graph();
@@ -15,7 +15,7 @@ graph.addEdge('B', 'C');
 
 graph.addEdge('D', 'E');
 
-console.log(checkRoute('A', 'C', graph), true);
+// console.log(checkRoute('A', 'C', graph), true);
 // console.log(checkRoute('A', 'E', graph), false);
 // console.log(checkRoute('B', 'A', graph), true);
 // console.log(checkRoute('D', 'E', graph), true);

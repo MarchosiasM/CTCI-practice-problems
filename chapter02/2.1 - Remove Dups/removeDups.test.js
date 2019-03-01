@@ -4,7 +4,23 @@ var LinkedList = function (value) {
   this.next = null;
 };
 
-const { removeDups, cloneList } = require('./removeDups.prac.5');
+const cloneList = (node) => {
+  const clonedHead = new LinkedList(node.value);
+  let prevClone = clonedHead;
+  let currNode = node.next;
+  let currClone;
+  while (currNode != null) {
+    currClone = new LinkedList(currNode.value);
+    if (prevClone != null) {
+      prevClone.next = currClone;
+    }
+    currNode = currNode.next;
+    prevClone = currClone;
+  }
+  return clonedHead;
+};
+
+const removeDups = require('./removeDups.prac.6');
 
 describe('Chapter 2, section 1', () => {
   describe('Helper function, cloned list', () => {
@@ -40,9 +56,6 @@ describe('Chapter 2, section 1', () => {
       expect(removeDups(a)).toEqual(a);
     });
 
-    it('returns a linkedlist that is distinct from the original', () => {
-      expect(removeDups(a)).not.toBe(a);
-    });
 
     it('correctly filters out duplicates', () => {
       var f = new LinkedList('f');

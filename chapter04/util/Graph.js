@@ -11,7 +11,7 @@ class Graph {
     } else {
       this.nodes[node][edge] = true;
     }
-    console.log(this.nodes);
+    // console.log(this.nodes);
   }
 
   addNode(value) {

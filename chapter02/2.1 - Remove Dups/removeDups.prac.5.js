@@ -4,21 +4,7 @@ const LinkedList = function (value) {
   this.next = null;
 };
 
-const cloneList = (node) => {
-  const clonedHead = new LinkedList(node.value);
-  let prevClone = clonedHead;
-  let currNode = node.next;
-  let currClone;
-  while (currNode != null) {
-    currClone = new LinkedList(currNode.value);
-    if (prevClone != null) {
-      prevClone.next = currClone;
-    }
-    currNode = currNode.next;
-    prevClone = currClone;
-  }
-  return clonedHead;
-};
+
 
 /* FUNCTIONS */
 const removeDups = function (head) {
@@ -39,4 +25,4 @@ const removeDups = function (head) {
   return cloneHead;
 };
 
-module.exports = { removeDups, cloneList };
+module.exports = { removeDups };
